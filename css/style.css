@@ -57,9 +57,8 @@ html {
       font-size: 125%; } }
 
 body {
-  height: 100%; }
-
-body {
-  background: #c54f4f; }
-  body p {
-    color: red; }
+  background: white;
+  color: #505050;
+  display: grid;
+  place-content: center;
+  min-height: 100vh; }

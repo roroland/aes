@@ -1,8 +1,7 @@
-@import '../scss/base/index';
-
 body{
-  background: rgb(197, 79, 79);
-  p{
-    color: red;
-  }
+  background: white;
+  color: #505050;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
 }
