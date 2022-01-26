@@ -14,7 +14,6 @@ ul {
   list-style-position: inside;
   list-style: none; }
 
-@use 'colors' as *;
 h1, h2, h3, h4, h5, h6, p, a, li {
   font-family: 'Nunito', sans-serif;
   font-weight: normal; }
@@ -39,26 +38,13 @@ h4,
 .h4 {
   font-size: 1.25rem; }
 
-p,
-h5,
-.h5 {
-  font-size: 1rem; }
-
-html {
-  font-size: 100%;
-  height: 100%;
-  line-height: 1.5;
-  scroll-behavior: smooth; }
-  @media only screen and (max-width: 47.99em) {
-    html {
-      font-size: 85%; } }
-  @media only screen and (min-width: 90em) {
-    html {
-      font-size: 125%; } }
-
 body {
   background: white;
   color: #505050;
   display: grid;
   place-content: center;
   min-height: 100vh; }
+  body > * {
+    justify-self: center; }
+  body a {
+    color: #80c46a; }
