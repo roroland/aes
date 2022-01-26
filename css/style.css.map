@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,IAAI,CAAA;EACF,UAAU,EAAE,uBAAuB;EACnC,KAAK,EAAE,GAAG;CAIX;;AAND,AAGE,IAHE,CAGF,CAAC,CAAA;EACC,KAAK,EAAE,IAAI;CACZ",
-    "sources": [
-        "style.scss"
-    ],
-    "names": [],
-    "file": "style.css"
-}
+{"version":3,"sourceRoot":"","sources":["../scss/abstracts/_typography.scss","../scss/style.scss","../scss/abstracts/_reset.scss","../scss/abstracts/_variables.scss","../scss/abstracts/_colors.scss","../scss/abstracts/_layout.scss"],"names":[],"mappings":"AACQ;ACCA;ACFR;AAAA;AAAA;EAGE;EACA;EACA;;;AAGF;AAAA;EAEE;;;AAGF;EACE;EACA;;;ACZF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;ACGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;ACzBF;EACE;EACA;EACA;EACA;;AACA;EALF;IAMI;;;AAEF;EARF;IASI;;;;AAGJ;EACE,kBDZM;ECaN;EACA;EACA;;AACA;EACE;;;ALnBJ;EACE;;;AAEF;AAAA;EAEE;EACA;EACA;;;AAEF;AAAA;EAEE;EACA;;;AAEF;AAAA;EAEE;EACA;;;AAEF;AAAA;EAEE;EACA;;;AAEF;EACE,OIjBS;EJkBT;EACA;EACA;;AACA;EACE;EACA;EACA;;;AAGJ;AAAA;AAAA;EAGE;EACA;;;AAEF;EACE,OIrCQ;EJsCR;EACA;EACA;;AACA;EACE;;AAEF;EAEE;EACA;;;AAKJ;EACE,OInDK;;;AJqDP;EACE,OIzDK","file":"style.css"}
