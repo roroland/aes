@@ -19,13 +19,7 @@ ul {
 }
 
 :root {
-  --xpos: 0;
-  --ypos: 0;
-  --data-what: -20rem;
-  --data-about: -10rem;
-  --data-works: -5rem;
-  --data-contact: 0;
-  --deco-width: 1636px;
+  --maxContent: 60rem;
 }
 
 :root {
@@ -67,11 +61,31 @@ html {
 body {
   background-color: #F9F6EF;
   display: grid;
-  place-content: center;
   min-height: 100vh;
 }
-body > * {
-  justify-self: center;
+
+header,
+main,
+footer {
+  display: grid;
+  grid-template-columns: minmax(clamp(0.5rem, 1vw, 1.5rem), 1fr) [cont-start] minmax(clamp(0em, 1vw, 1.5rem), var(--maxContent)) [cont-end] minmax(clamp(0.5rem, 1vw, 1.5rem), 1fr);
+}
+header > *,
+main > *,
+footer > * {
+  grid-column: cont-start/cont-end;
+}
+
+header {
+  background-color: #B25A2A;
+}
+
+main {
+  background-color: #727070;
+}
+
+footer {
+  background-color: #F2EBD1;
 }
 
 h2, h3, h4, h5, h6, p, a, li {

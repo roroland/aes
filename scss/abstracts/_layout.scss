@@ -14,12 +14,27 @@ html{
     font-size: 125%;
   }  
 }
+
 body{
   background-color: $light;
   display: grid;
-  place-content: center;
   min-height: 100vh;
-  > * {
-    justify-self: center;
+}
+header,
+main,
+footer{
+  display: grid;
+  grid-template-columns: minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr)  [cont-start] minmax(clamp(0em, 1vw, $component-space), var(--maxContent)) [cont-end] minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr) ;
+  >*{
+    grid-column: cont-start / cont-end;
   }
+}
+header{
+  background-color: $dark;
+}
+main{
+  background-color: $darkgray;
+}
+footer{
+  background-color: $pale;
 }
