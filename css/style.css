@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Nunito:wght@300;500;600&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,600,700&font-display=swap");
 *,
 *::after,
 *::before {
@@ -18,8 +17,26 @@ ul {
   list-style: none;
 }
 
+img,
+iframe {
+  max-width: 100%;
+}
+
+iframe {
+  aspect-ratio: auto 16/9;
+  width: 100%;
+  height: 100%;
+}
+
 :root {
   --maxContent: 60rem;
+  --tys-xs: .85rem;
+  --tys-s: 1rem;
+  --tys-m: 1.25rem;
+  --tys-l: 1.563rem;
+  --tys-xl: 1.953rem;
+  --tys-xxl: 2.441rem;
+  --tys-h1: 2.941rem;
 }
 
 :root {
@@ -61,6 +78,8 @@ html {
 body {
   background-color: #F9F6EF;
   display: grid;
+  display: grid;
+  grid-template-rows: auto min-content min-content;
   min-height: 100vh;
 }
 
@@ -77,11 +96,47 @@ footer > * {
 }
 
 header {
-  background-color: #B25A2A;
+  background: #AC3F21;
+  color: #ffffff;
+  min-height: 10rem;
+}
+
+.cover {
+  background: #252525;
+  display: grid;
+  grid-template-rows: [header-start] auto [header-end cover-start] 18.75rem [bottom-start] min-content [bottom-end cover-end];
+  overflow: hidden;
+}
+
+.header-cover {
+  grid-column: 1/-1;
+  grid-row-start: cover-start;
+  z-index: 1;
+}
+
+.bottom-cover {
+  align-self: flex-end;
+  grid-column: 1/-1;
+  grid-row: bottom-start;
+  z-index: 1;
+}
+
+.header-video {
+  grid-row: cover-start/cover-end;
+  grid-column: 1/-1;
+  max-height: 80vh;
+  max-width: 77.5rem;
+  justify-self: center;
+  z-index: 0;
 }
 
 main {
-  background-color: #727070;
+  grid-column: 1/-1;
+}
+main > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr min-content;
 }
 
 footer {
@@ -94,26 +149,26 @@ h2, h3, h4, h5, h6, p, a, li {
 
 h1,
 .h1 {
-  font-size: 2.441rem;
+  font-size: var(--tys-h1);
   font-family: "Kalam", cursive;
   font-weight: 700;
 }
 
 h2,
 .h2 {
-  font-size: 1.953rem;
+  font-size: var(--tys-xl);
   font-weight: 600;
 }
 
 h3,
 .h3 {
-  font-size: 1.563rem;
+  font-size: var(--tys-l);
   font-weight: 500;
 }
 
 h4,
 .h4 {
-  font-size: 1.25rem;
+  font-size: var(--tys-m);
   font-weight: normal;
 }
 
@@ -132,7 +187,7 @@ strong {
 p,
 h5,
 .h5 {
-  font-size: 1rem;
+  font-size: var(--tys-s);
   font-weight: normal;
 }
 
@@ -150,12 +205,23 @@ a:focus::after, a:active::after {
   border-bottom: 1pt dotted #80c46a;
 }
 
-h2 {
-  color: #55543D;
+nav {
+  display: flex;
+  padding: 0.5rem 0;
 }
 
 h1 {
-  color: #B25A2A;
+  text-transform: uppercase;
+}
+
+ul {
+  display: inline-flex;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+ul li {
+  flex: 1 max-content;
+  font-size: var(--tys-xs);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,9 @@
+@use 'sass:math';
+
+$base-font-size: 16 !default;
+  @function strip($value) {
+    @return math.div($value, ($value * 0 + 1));
+}
+@function rel($value){
+  @return #{math.div(strip($value), $base-font-size)}rem;
+}

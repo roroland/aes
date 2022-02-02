@@ -1,0 +1,18 @@
+@use '../abstracts/variables' as *;
+
+nav{
+  display: flex;
+  padding: $component-space-tiny 0;
+}
+h1{
+  text-transform: uppercase;
+}
+ul{
+  display: inline-flex;
+  gap: $component-space;
+  margin-left: auto;
+  li{
+    flex: 1 max-content;
+    font-size: var(--tys-xs);
+  }
+}
