@@ -192,10 +192,11 @@ h5,
 }
 
 a {
-  color: #80c46a;
+  color: #F9F6EF;
   transition: color 0.3s ease-out;
   position: relative;
   font-weight: normal;
+  text-decoration: none;
 }
 a:hover {
   color: rgba(var(--accent-a), 0.5);

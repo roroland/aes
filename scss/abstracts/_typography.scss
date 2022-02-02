@@ -43,10 +43,11 @@ h5,
   font-weight: normal;
 }
 a{
-  color: $accent;
+  color: $light;
   transition: color .3s ease-out;
   position: relative;
   font-weight: normal;
+  text-decoration: none;
   &:hover{
     color: rgba(var(--accent-a), .5);
   }
