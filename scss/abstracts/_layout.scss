@@ -33,9 +33,30 @@ footer{
   }
 }
 header{
+  grid-template-rows: 1fr;
+  grid-row-start: 1; 
   background: $darker;
   color: $lightest;
   min-height: rel(160px);
+  > *{
+    position: relative;
+    grid-row: 1/-1;
+    z-index: 1;
+  }
+}
+article{
+  margin: $component-space 0;
+  h2{
+    margin-bottom: $component-space;
+  }
+  p img{
+    float: right;
+    border-radius: 50%;
+    max-width: 15vw;
+  }
+  p{
+    margin-bottom: $component-space-small;
+  }
 }
 .cover{
   background: $darkergray;
@@ -47,6 +68,17 @@ header{
   grid-column: 1/-1;
   grid-row-start: cover-start; 
   z-index: 1;
+}
+.header-top{
+  grid-column: 1/-1;
+  grid-row: 1/span 1;
+  mix-blend-mode: multiply;
+  object-position: 50% 80%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: rel(180px);
+  z-index: 0;
 }
 .bottom-cover{
   align-self: flex-end;
@@ -65,6 +97,8 @@ header{
 
 main{
   grid-column: 1/-1;
+  background: url('../../images/texture.jpg') no-repeat;
+  mix-blend-mode: darken;
   > div{
     display: grid;
     grid-template-columns: 1fr;

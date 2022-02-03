@@ -17,6 +17,10 @@ ul {
   list-style: none;
 }
 
+strong {
+  font-weight: 700;
+}
+
 img,
 iframe {
   max-width: 100%;
@@ -96,9 +100,31 @@ footer > * {
 }
 
 header {
+  grid-template-rows: 1fr;
+  grid-row-start: 1;
   background: #AC3F21;
   color: #ffffff;
   min-height: 10rem;
+}
+header > * {
+  position: relative;
+  grid-row: 1/-1;
+  z-index: 1;
+}
+
+article {
+  margin: 1.5rem 0;
+}
+article h2 {
+  margin-bottom: 1.5rem;
+}
+article p img {
+  float: right;
+  border-radius: 50%;
+  max-width: 15vw;
+}
+article p {
+  margin-bottom: 1rem;
 }
 
 .cover {
@@ -112,6 +138,18 @@ header {
   grid-column: 1/-1;
   grid-row-start: cover-start;
   z-index: 1;
+}
+
+.header-top {
+  grid-column: 1/-1;
+  grid-row: 1/span 1;
+  mix-blend-mode: multiply;
+  object-position: 50% 80%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 11.25rem;
+  z-index: 0;
 }
 
 .bottom-cover {
@@ -132,6 +170,8 @@ header {
 
 main {
   grid-column: 1/-1;
+  background: url("../../images/texture.jpg") no-repeat;
+  mix-blend-mode: darken;
 }
 main > div {
   display: grid;
@@ -143,7 +183,7 @@ footer {
   background-color: #F2EBD1;
 }
 
-h2, h3, h4, h5, h6, p, a, li {
+h2, h3, h4, h5, h6, p, strong, a, li {
   font-family: "Nunito", sans-serif;
 }
 
@@ -172,23 +212,11 @@ h4,
   font-weight: normal;
 }
 
-strong {
-  color: #727070;
-  padding: 0 0.15em;
-  display: inline-block;
-  position: relative;
-}
-.contentItem--wrapper strong {
-  color: currentColor;
-  background: rgba(77, 28, 53, 0.25);
-  box-shadow: 2px 2px 0 0px rgba(24, 16, 16, 0.36);
-}
-
 p,
 h5,
 .h5 {
-  font-size: var(--tys-s);
-  font-weight: normal;
+  font-size: var(--tys-m);
+  font-weight: 300;
 }
 
 a {
@@ -222,7 +250,7 @@ ul {
 }
 ul li {
   flex: 1 max-content;
-  font-size: var(--tys-xs);
+  font-size: var(--tys-s);
 }
 
 /*# sourceMappingURL=style.css.map */

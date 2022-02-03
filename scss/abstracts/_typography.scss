@@ -1,7 +1,7 @@
 @use 'colors' as *;
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Nunito:wght@300;500;600&display=swap');
 
-h2, h3, h4, h5, h6, p, a, li{
+h2, h3, h4, h5, h6, p, strong, a, li{
   font-family: 'Nunito', sans-serif;
 }
 h1,
@@ -25,22 +25,12 @@ h4,
   font-size: var(--tys-m);
   font-weight: normal;
 }
-strong {
-  color: $darkgray;
-  padding: 0 .15em;
-  display: inline-block;
-  position: relative;
-  .contentItem--wrapper &{
-    color: currentColor;
-    background: rgba(77, 28, 53, 0.25);
-    box-shadow: 2px 2px 0 0px rgba(24, 16, 16, 0.36);
-  }
-}
+
 p,
 h5,
 .h5{
-  font-size: var(--tys-s);
-  font-weight: normal;
+  font-size: var(--tys-m);
+  font-weight: 300;
 }
 a{
   color: $light;
