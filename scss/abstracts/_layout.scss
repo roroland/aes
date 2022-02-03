@@ -45,7 +45,9 @@ header{
   }
 }
 article{
-  margin: $component-space 0;
+  &:not(:first-of-type){
+    margin: $component-space 0;
+  }
   h2{
     margin-bottom: $component-space;
   }

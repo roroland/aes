@@ -112,7 +112,7 @@ header > * {
   z-index: 1;
 }
 
-article {
+article:not(:first-of-type) {
   margin: 1.5rem 0;
 }
 article h2 {
