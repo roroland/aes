@@ -25,7 +25,8 @@ body{
 }
 header,
 main,
-footer{
+footer,
+.characters{
   display: grid;
   grid-template-columns: minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr)  [cont-start] minmax(clamp(0em, 1vw, $component-space), var(--maxContent)) [cont-end] minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr) ;
   >*{
@@ -38,6 +39,13 @@ header{
   background: $darker;
   color: $lightest;
   min-height: rel(160px);
+  h1{
+    line-height: 1;
+    margin-top: $component-space;
+  }
+  h4{
+    color: $pale;
+  }
   > *{
     position: relative;
     grid-row: 1/-1;
@@ -49,6 +57,9 @@ article{
     margin: $component-space 0;
   }
   h2{
+    color: $darker;
+    font-family: 'Kalam', cursive;
+    text-transform: uppercase;
     margin-bottom: $component-space;
   }
   p img{
@@ -86,6 +97,18 @@ article{
   align-self: flex-end;
   grid-column: 1/-1;
   grid-row: bottom-start; 
+  z-index: 1;
+}
+.top-left{
+  align-self: flex-start;
+  justify-self: flex-start;
+  grid-column: 1/-1;
+  z-index: 1;
+}
+.bottom-right{
+  align-self: flex-end;
+  justify-self: flex-end;
+  grid-column: 1/-1;
   z-index: 1;
 }
 .header-video{

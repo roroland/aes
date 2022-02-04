@@ -89,13 +89,15 @@ body {
 
 header,
 main,
-footer {
+footer,
+.characters {
   display: grid;
   grid-template-columns: minmax(clamp(0.5rem, 1vw, 1.5rem), 1fr) [cont-start] minmax(clamp(0em, 1vw, 1.5rem), var(--maxContent)) [cont-end] minmax(clamp(0.5rem, 1vw, 1.5rem), 1fr);
 }
 header > *,
 main > *,
-footer > * {
+footer > *,
+.characters > * {
   grid-column: cont-start/cont-end;
 }
 
@@ -105,6 +107,13 @@ header {
   background: #AC3F21;
   color: #ffffff;
   min-height: 10rem;
+}
+header h1 {
+  line-height: 1;
+  margin-top: 1.5rem;
+}
+header h4 {
+  color: #F2EBD1;
 }
 header > * {
   position: relative;
@@ -116,6 +125,9 @@ article:not(:first-of-type) {
   margin: 1.5rem 0;
 }
 article h2 {
+  color: #AC3F21;
+  font-family: "Kalam", cursive;
+  text-transform: uppercase;
   margin-bottom: 1.5rem;
 }
 article p img {
@@ -156,6 +168,20 @@ article p {
   align-self: flex-end;
   grid-column: 1/-1;
   grid-row: bottom-start;
+  z-index: 1;
+}
+
+.top-left {
+  align-self: flex-start;
+  justify-self: flex-start;
+  grid-column: 1/-1;
+  z-index: 1;
+}
+
+.bottom-right {
+  align-self: flex-end;
+  justify-self: flex-end;
+  grid-column: 1/-1;
   z-index: 1;
 }
 
@@ -251,6 +277,40 @@ ul {
 ul li {
   flex: 1 max-content;
   font-size: var(--tys-s);
+}
+
+.characters {
+  color: #ffffff;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  grid-column: 1/-1;
+  background: radial-gradient(51.62% 150.17% at 48.38% 43.68%, #D6B765 0%, #D6B765 71.24%, rgba(214, 187, 101, 0.63) 100%);
+}
+.characters h2 {
+  color: currentColor;
+}
+.characters > div {
+  padding: 3rem 0;
+}
+.characters .characters--wrapper {
+  display: grid;
+  grid-column: cont-start/-1;
+  grid-template-columns: 1fr 400px;
+}
+.characters .characters--wrapper .characters-image {
+  overflow: hidden;
+}
+.characters .characters--wrapper .characters-image img {
+  transform: translateX(30%);
+}
+.characters dl dd {
+  display: none;
+}
+.characters dl .active {
+  display: block;
+}
+.characters dl .active + dd {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

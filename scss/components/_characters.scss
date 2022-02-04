@@ -1,0 +1,39 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+
+.characters{
+  color: $lightest;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  grid-column: 1/-1;
+  background: radial-gradient(51.62% 150.17% at 48.38% 43.68%, #D6B765 0%, #D6B765 71.24%, rgba(214, 187, 101, 0.63) 100%);
+  h2{
+    color: currentColor;
+  }
+  > div{
+    padding: calc($component-space * 2) 0;
+  }
+
+  .characters--wrapper{
+    display: grid;
+    grid-column: cont-start / -1;
+    grid-template-columns: 1fr 400px;
+    .characters-image{
+      overflow: hidden;
+      img{
+        transform: translateX(30%);
+      }
+    }
+  }
+  dl{
+    dd{
+      display: none;
+    }
+    .active{
+      display: block;
+      + dd{
+        display: block;
+      }
+    }
+  }
+}

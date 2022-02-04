@@ -13,11 +13,11 @@
     <div>
       <nav>
         <ul>
-          <li><a href="#">History</a></li>
-          <li><a href="#">Characters</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#history">History</a></li>
+          <li><a href="#characters">Characters</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#footer">Contact</a></li>
         </ul>
       </nav>
       <h1>An every day story</h1>
@@ -34,7 +34,7 @@
   </section>
   
   <main>
-    <article id="history">
+    <article class="history" id="history">
       <!-- history -->
       <h2>History</h2>
       <div>
@@ -50,30 +50,66 @@
             </p>
           </div>
         </article>
-        <article style="display: none;">
+        <article class="characters" id="characters">
+          <img class="top-left" src="images/bottom-inverted.svg" alt="bottom-inverted">
           <!-- Characters -->
-          <h2>Characters</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eos.</p>
-          <ul>
-            <li>Ch1</li>
-            <li>Ch2</li>
-            <li>Ch3</li>
-          </ul>
+          <div>
+            <h2>Characters</h2>
+            <div class="characters--wrapper">
+              <div class="characters-desc">
+                <dl>
+                  <dt class="active">
+                    <a href="#">
+                      <h3>Steam Boat</h3>
+                    </a>
+                  </dt>
+                  <dd>
+                    <p>The symbol of love between the protagonist and his wife. The boat can carry and pull the heaviest stuff with its anchor, navigate water and push objects to move them.
+                    </p>
+                  </dd>
+                  <dt>
+                    <a href="#">
+                      <h3>Tiny Soldier</h3>
+                    </a>
+                  </dt>
+                  <dd>
+                    <p>The protagonist holds dear this keepsake because it is the last memory he has of his father. The tin soldier is able to grapple to metallic objects and swing, use a parachute and shoot down small objects to reach otherwise inaccessible places.
+                    </p>
+                  </dd>
+                  <dt>
+                    <a href="#">
+                      <h3>Bat Origami</h3>
+                    </a>
+                  </dt>
+                  <dd>
+                    <p>it represents the bond between the protagonist and his father. The origami can jump, glide and thin itself to overcome obstacles. Watch out for flames and grasshoppers!
+                    </p>
+                  </dd>
+                </dl>
+              </div>
+              <ul class="characters-image">
+                <li>
+                  <img src="/images/steam_boat.png" alt="Steam boat">
+                </li>
+              </ul>
+            </div>
+          </div>
+          <img class="bottom-right" src="images/bottom-right.svg" alt="bottom-right">
         </article>
-        <article>
+        <article class="features" id="features">
           <!-- Features -->
           <h2>Features</h2>
           <ul>
-            <li><p><strong>Use your wits to reveal the past</strong></p>
+            <li><p>Use your wits to reveal the past in 9 beautiful levels.</p>
               <p>Resolve environmental puzzles and defeat unsettling enemies to reach catharsis and achieve peace.</p> 
             </li>
             <li>
-              <p><strong>Overcome your nightmares and face your fears</strong></p>
+              <p>Overcome your nightmares and face your fears.</p>
               <p>Go through oniric haunting sections and heal sorrowful memories.</p>
             </li>
           </ul>
         </article>
-        <article>
+        <article class="about" id="about">
           <!-- About us -->
           <h2>About Us</h2>
           <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique labore optio tempore facilis laborum quia expedita possimus temporibus, quasi culpa distinctio velit. Magnam, aliquid in.</h3>
@@ -89,7 +125,7 @@
           </ul>
         </article>
       </main>
-      <footer>
+      <footer class="footer" id="footer">
         <!-- Footer -->
         <div>Cactus</div>
         <div>Contact Info</div>
