@@ -1,0 +1,19 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+
+.features{
+  display: flex;
+  flex-flow: row wrap;
+  ul{
+    display: flex;
+    flex-flow: row wrap;
+    gap: $component-space;
+  }
+  li{
+    flex: 1 33%;
+    list-style-type: circle;
+    p{
+      padding-right: $component-space-tiny;
+    }
+  }
+}

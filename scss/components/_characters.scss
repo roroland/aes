@@ -4,35 +4,69 @@
 .characters{
   color: $lightest;
   display: grid;
+  grid-template-columns: minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr)  [char-start] repeat(4, 1fr) [char-end] minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr) ;
   grid-template-rows: min-content 1fr min-content;
   grid-column: 1/-1;
   background: radial-gradient(51.62% 150.17% at 48.38% 43.68%, #D6B765 0%, #D6B765 71.24%, rgba(214, 187, 101, 0.63) 100%);
+  > div{
+    grid-row: 2;
+    grid-column: char-start / char-end;
+  }
   h2{
     color: currentColor;
   }
-  > div{
-    padding: calc($component-space * 2) 0;
-  }
-
-  .characters--wrapper{
-    display: grid;
-    grid-column: cont-start / -1;
-    grid-template-columns: 1fr 400px;
-    .characters-image{
-      overflow: hidden;
-      img{
-        transform: translateX(30%);
+  .characters-image{
+    grid-row: 1/-1;
+    grid-column: 5/-1;
+    z-index: 10;
+    gap: 0;
+    margin-left: initial;
+    transform: translateY(-5%);
+    overflow:hidden;
+    ul{
+      height: 100%;
+      transform: translateX(30%);
+      li{
+        flex: 1;
       }
     }
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left;
+    }
+  }
+  .characters--wrapper{
+    display: grid;
+    grid-column: char-start / char-end;
+    grid-template-columns: 1fr;
+    padding: calc(#{$component-space} * 2) 8rem 0 0;
   }
   dl{
     dd{
       display: none;
+      color: $pale;
+    }
+    dt{
+      a{
+        color: rgba(var(--gray-a), .35);
+      }
+      h3{
+        font-size: var(--tys-m);
+      }
     }
     .active{
       display: block;
+      a{
+        color: $gray;
+      }
+      h3{
+        font-size: var(--tys-l);
+      }
       + dd{
         display: block;
+        margin-bottom: $component-space-small;
       }
     }
   }
