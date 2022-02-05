@@ -123,7 +123,7 @@ article{
 
 main{
   grid-column: 1/-1;
-  background: url('../../images/texture.jpg') no-repeat;
+  background: url('../../images/texture.jpg') repeat-y;
   mix-blend-mode: darken;
   > div{
     display: grid;

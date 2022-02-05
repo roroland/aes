@@ -1,27 +1,38 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
 @use '../abstracts/colors' as *;
 
 .characters{
   color: $lightest;
   display: grid;
-  grid-template-columns: minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr)  [char-start] repeat(4, 1fr) [char-end] minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr) ;
+  grid-template-columns: minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr)  [cont-start] minmax(clamp(0em, 1vw, $component-space), var(--maxContent)) [cont-end] minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr) ;
   grid-template-rows: min-content 1fr min-content;
   grid-column: 1/-1;
   background: radial-gradient(51.62% 150.17% at 48.38% 43.68%, #D6B765 0%, #D6B765 71.24%, rgba(214, 187, 101, 0.63) 100%);
+  > section{
+    display: grid;
+    grid-row: 2;
+    grid-column: cont-start / cont-end;
+    grid-template-columns: minmax(clamp(0em, 1vw, $component-space), 1fr)  [cont-start] minmax(clamp(0em, 1vw, $component-space), var(--maxContent)) [cont-end] minmax(clamp(0em, 1vw, $component-space), 1fr) ;
+    >*{
+    }
+  }
   > div{
     grid-row: 2;
-    grid-column: char-start / char-end;
+    grid-column: 2 / -1;
   }
   h2{
     color: currentColor;
   }
   .characters-image{
     grid-row: 1/-1;
-    grid-column: 5/-1;
+    grid-column-end: -1;
     z-index: 10;
     gap: 0;
     margin-left: initial;
+    max-width: 45%;
     transform: translateY(-5%);
+    justify-self: flex-end;
     overflow:hidden;
     ul{
       height: 100%;
@@ -39,7 +50,7 @@
   }
   .characters--wrapper{
     display: grid;
-    grid-column: char-start / char-end;
+    grid-column: 1/4;
     grid-template-columns: 1fr;
     padding: calc(#{$component-space} * 2) 8rem 0 0;
   }

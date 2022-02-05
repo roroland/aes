@@ -10,10 +10,13 @@
     gap: $component-space;
   }
   li{
-    flex: 1 33%;
+    flex: 1 100%;
     list-style-type: circle;
     p{
       padding-right: $component-space-tiny;
+    }
+    @media only screen and (min-width: 48em) {
+      flex: 1 33%;
     }
   }
 }

@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+
+.about{
+  background: rgba(var(--dark-a), .75);
+  color: $pale;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr)  [cont-start] minmax(clamp(0em, 1vw, $component-space), var(--maxContent)) [cont-end] minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr);
+  >*{
+    grid-column: cont-start / cont-end;
+  }
+  h2{
+    color: $lightest;
+  }
+  div{
+    padding: calc(#{$component-space} * 3) 0 calc(#{$component-space} * 5);
+  }
+  div > p{
+    max-width: 80%;
+  }
+
+  ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    &.team{
+      li{
+        flex: 0 1 19%;
+      }
+    }
+  }
+
+}
