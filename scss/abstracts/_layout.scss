@@ -6,7 +6,7 @@
 html{
   font-size: 100%;
   height: 100%;
-  line-height: 1.5;
+  line-height: 1.35;
   scroll-behavior: smooth;
   @media only screen and (max-width: 47.99em){
     font-size: 85%;
@@ -40,7 +40,7 @@ header{
   min-height: rel(160px);
   h1{
     line-height: 1;
-    margin-top: $component-space;
+    margin-top: $component-space * 2;
   }
   h4{
     color: $pale;

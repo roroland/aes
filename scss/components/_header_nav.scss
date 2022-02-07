@@ -1,3 +1,4 @@
+@use '../abstracts/colors' as *;
 @use '../abstracts/variables' as *;
 
 nav{
@@ -14,5 +15,8 @@ ul{
   li{
     flex: 1 max-content;
     font-size: var(--tys-s);
+  }
+  a{
+    color: $pale;
   }
 }
