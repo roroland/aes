@@ -206,7 +206,32 @@ main > div {
 }
 
 footer {
-  background-color: #F2EBD1;
+  background-color: #ffffff;
+  padding-top: 3rem;
+}
+footer > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+footer > div h3 {
+  margin-bottom: 1.5rem;
+}
+footer > div ul {
+  display: inline-block;
+}
+footer > div ul li {
+  margin-bottom: 1.5rem;
+}
+footer > div a {
+  align-items: flex-end;
+  color: #80c46a;
+}
+footer > div .privacy {
+  grid-column: 1/-1;
+  font-size: 0.625rem;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1.5rem;
 }
 
 h2, h3, h4, h5, h6, p, strong, a, li {

@@ -132,5 +132,30 @@ main{
   }
 }
 footer{
-  background-color: $pale;
+  background-color: $lightest;
+  padding-top: $component-space * 2;
+  > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    h3{
+      margin-bottom: $component-space;
+    }
+    ul{
+      display: inline-block;
+      li{
+        margin-bottom: $component-space;
+      }
+    }
+    a{
+      align-items: flex-end;
+      color: $accent;
+    }
+    .privacy{
+      grid-column: 1/-1;
+      font-size: rel(10px);
+      text-align: center;
+      padding: $component-space-small;
+      margin-top: $component-space;
+    }
+  }
 }
