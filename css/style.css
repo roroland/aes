@@ -353,10 +353,15 @@ ul a {
   object-fit: cover;
   object-position: left;
 }
+.characters .character-desc {
+  max-height: 17.5rem;
+  overflow: hidden;
+}
 .characters .characters--wrapper {
   display: grid;
   grid-column: 1/4;
   grid-template-columns: 1fr;
+  grid-auto-rows: min-content;
   padding: calc(1.5rem * 2) 8rem 0 0;
 }
 .characters dl dd {
@@ -364,31 +369,49 @@ ul a {
   opacity: 0;
   max-height: 0;
   color: #F2EBD1;
+  position: relative;
+}
+.characters dl dd p {
+  transition: inherit;
+  font-size: var(--tys-xs);
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  max-width: 40ch;
 }
 .characters dl dt {
   transition: all 1s ease-in-out;
 }
 .characters dl dt a {
-  transition: all 1s ease-in-out;
+  transition: inherit;
   color: rgba(var(--gray-a), 0.35);
 }
 .characters dl dt h3 {
+  transition: inherit;
   font-size: var(--tys-m);
 }
 .characters dl .active {
   display: block;
+  transition: all 1s ease-in-out;
 }
 .characters dl .active a {
+  transition: inherit;
   color: #55543D;
 }
 .characters dl .active h3 {
+  transition: inherit;
   font-size: var(--tys-l);
+  font-weight: 700;
 }
 .characters dl .active + dd {
   transition: all 1s ease-in-out;
   opacity: 1;
   max-height: 1000px;
   margin-bottom: 1rem;
+}
+.characters dl .active + dd p {
+  transition: inherit;
+  font-size: var(--tys-m);
+  transform: rotateX(0);
 }
 
 .features {

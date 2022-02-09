@@ -13,9 +13,7 @@
     display: grid;
     grid-row: 2;
     grid-column: cont-start / cont-end;
-    grid-template-columns: minmax(clamp(0em, 1vw, $component-space), 1fr)  [cont-start] minmax(clamp(0em, 1vw, $component-space), var(--maxContent)) [cont-end] minmax(clamp(0em, 1vw, $component-space), 1fr) ;
-    >*{
-    }
+    grid-template-columns: minmax(clamp(0em, 1vw, $component-space), 1fr)  [cont-start] minmax(clamp(0em, 1vw, $component-space), var(--maxContent)) [cont-end] minmax(clamp(0em, 1vw, $component-space), 1fr);
   }
   > div{
     grid-row: 2;
@@ -48,10 +46,15 @@
       object-position: left;
     }
   }
+  .character-desc{
+    max-height: rel(280px);
+    overflow: hidden;
+  }
   .characters--wrapper{
     display: grid;
     grid-column: 1/4;
     grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
     padding: calc(#{$component-space} * 2) 8rem 0 0;
   }
   dl{
@@ -60,30 +63,48 @@
       opacity: 0;
       max-height: 0;
       color: $pale;
+      position: relative;
+      p{
+        transition: inherit;
+        font-size: var(--tys-xs);
+        transform: rotateX(-90deg);
+        transform-origin: bottom;
+        max-width: 40ch;
+      }
     }
     dt{
       transition: all 1s ease-in-out;
       a{
-        transition: all 1s ease-in-out;
+        transition: inherit;
         color: rgba(var(--gray-a), .35);
       }
       h3{
+        transition: inherit;
         font-size: var(--tys-m);
       }
     }
     .active{
       display: block;
+      transition: all 1s ease-in-out;
       a{
+        transition: inherit;
         color: $gray;
       }
       h3{
+        transition: inherit;
         font-size: var(--tys-l);
+        font-weight: 700;
       }
       + dd{
-      transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
         opacity: 1;
         max-height: 1000px;
         margin-bottom: $component-space-small;
+        p{
+          transition: inherit;
+          font-size: var(--tys-m);
+          transform: rotateX(0);
+        }
       }
     }
   }
