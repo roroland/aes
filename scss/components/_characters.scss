@@ -24,7 +24,7 @@
   h2{
     color: currentColor;
   }
-  .characters-image{
+  .character-image{
     grid-row: 1/-1;
     grid-column-end: -1;
     z-index: 10;
@@ -56,11 +56,15 @@
   }
   dl{
     dd{
-      display: none;
+      transition: all 1s ease-in-out;
+      opacity: 0;
+      max-height: 0;
       color: $pale;
     }
     dt{
+      transition: all 1s ease-in-out;
       a{
+        transition: all 1s ease-in-out;
         color: rgba(var(--gray-a), .35);
       }
       h3{
@@ -76,7 +80,9 @@
         font-size: var(--tys-l);
       }
       + dd{
-        display: block;
+      transition: all 1s ease-in-out;
+        opacity: 1;
+        max-height: 1000px;
         margin-bottom: $component-space-small;
       }
     }
