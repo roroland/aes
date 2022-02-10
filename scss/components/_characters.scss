@@ -8,7 +8,7 @@
   grid-template-columns: minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr)  [cont-start] minmax(clamp(0em, 1vw, $component-space), var(--maxContent)) [cont-end] minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr) ;
   grid-template-rows: min-content 1fr min-content;
   grid-column: 1/-1;
-  background: radial-gradient(51.62% 150.17% at 48.38% 43.68%, #D6B765 0%, #D6B765 71.24%, rgba(214, 187, 101, 0.63) 100%);
+  background: radial-gradient(51.62% 150.17% at 48.38% 43.68%, #D6B765 0%, #D6B765 90%, rgba(214, 187, 101, 0.63) 100%);
   > section{
     display: grid;
     grid-row: 2;
@@ -62,7 +62,7 @@
       transition: all 1s ease-in-out;
       opacity: 0;
       max-height: 0;
-      color: $pale;
+      color: $light;
       position: relative;
       p{
         transition: inherit;

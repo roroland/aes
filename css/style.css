@@ -286,6 +286,48 @@ a:focus::after, a:active::after {
   border-bottom: 1pt dotted #80c46a;
 }
 
+.anim {
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes right {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
 nav {
   display: flex;
   padding: 0.5rem 0;
@@ -314,7 +356,7 @@ ul a {
   grid-template-columns: minmax(clamp(0.5rem, 1vw, 1.5rem), 1fr) [cont-start] minmax(clamp(0em, 1vw, 1.5rem), var(--maxContent)) [cont-end] minmax(clamp(0.5rem, 1vw, 1.5rem), 1fr);
   grid-template-rows: min-content 1fr min-content;
   grid-column: 1/-1;
-  background: radial-gradient(51.62% 150.17% at 48.38% 43.68%, #D6B765 0%, #D6B765 71.24%, rgba(214, 187, 101, 0.63) 100%);
+  background: radial-gradient(51.62% 150.17% at 48.38% 43.68%, #D6B765 0%, #D6B765 90%, rgba(214, 187, 101, 0.63) 100%);
 }
 .characters > section {
   display: grid;
@@ -368,7 +410,7 @@ ul a {
   transition: all 1s ease-in-out;
   opacity: 0;
   max-height: 0;
-  color: #F2EBD1;
+  color: #F9F6EF;
   position: relative;
 }
 .characters dl dd p {
@@ -417,6 +459,7 @@ ul a {
 .features {
   display: flex;
   flex-flow: row wrap;
+  overflow: hidden;
 }
 .features ul {
   display: flex;

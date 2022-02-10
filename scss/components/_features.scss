@@ -4,6 +4,7 @@
 .features{
   display: flex;
   flex-flow: row wrap;
+  overflow: hidden;
   ul{
     display: flex;
     flex-flow: row wrap;
