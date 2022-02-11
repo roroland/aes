@@ -338,13 +338,25 @@ h1 {
 }
 
 ul {
-  display: inline-flex;
-  gap: 1.5rem;
-  margin-left: auto;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+}
+@media only screen and (min-width: 64em) {
+  ul {
+    gap: 1.5rem;
+    margin-left: auto;
+  }
 }
 ul li {
-  flex: 1 max-content;
-  font-size: var(--tys-s);
+  flex: 0 1 30%;
+  font-size: var(--tys-xs);
+}
+@media only screen and (min-width: 64em) {
+  ul li {
+    font-size: var(--tys-s);
+    flex: 1 max-content;
+  }
 }
 ul a {
   color: #F2EBD1;

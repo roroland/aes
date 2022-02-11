@@ -9,12 +9,20 @@ h1{
   text-transform: uppercase;
 }
 ul{
-  display: inline-flex;
-  gap: $component-space;
-  margin-left: auto;
+  display: flex;
+  flex-flow: row wrap;
+  gap: $component-space-tiny;
+  @media only screen and (min-width: 64em){
+    gap: $component-space;
+    margin-left: auto;
+  }
   li{
-    flex: 1 max-content;
-    font-size: var(--tys-s);
+    flex: 0 1 30%;
+    font-size: var(--tys-xs);
+    @media only screen and (min-width: 64em){
+      font-size: var(--tys-s);
+      flex: 1 max-content;
+    }
   }
   a{
     color: $pale;
