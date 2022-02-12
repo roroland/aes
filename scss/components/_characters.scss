@@ -73,19 +73,41 @@
       }
     }
     dt{
-      transition: all 1s ease-in-out;
+      transition: all .5s ease-in-out;
       a{
         transition: inherit;
         color: rgba(var(--gray-a), .35);
       }
       h3{
-        transition: inherit;
         font-size: var(--tys-m);
+        position:relative;
+        padding: $component-space-tiny;
+        transition: inherit;
+        z-index: 0;
+        width: max-content;
+        &:hover{
+          color: $darkgray;
+        }
+        &::after{
+          content: '';
+          background: $pale;
+          border-radius: 8px;
+          display: block;
+          filter: url(#squiggle);
+          height: rel(20px);
+          opacity: 0;
+          position: absolute;
+          transition: inherit;
+          transform: skewX(-10deg) translate(-5px, 15px) rotate(2deg);
+          top: 0;
+          width:120%;
+          z-index: -1;
+        }
       }
     }
     .active{
       display: block;
-      transition: all 1s ease-in-out;
+      transition: all .75s ease-in-out;
       a{
         transition: inherit;
         color: $gray;
@@ -94,6 +116,13 @@
         transition: inherit;
         font-size: var(--tys-l);
         font-weight: 700;
+        &::after{
+          content: '';
+          display: block;
+          opacity: 1;
+          transition: inherit;
+          z-index: -1;
+        }
       }
       + dd{
         transition: all 1s ease-in-out;

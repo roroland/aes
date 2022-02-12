@@ -132,6 +132,7 @@ article p img {
   float: right;
   border-radius: 50%;
   max-width: 15vw;
+  margin: 1rem;
 }
 article p {
   margin-bottom: 1rem;
@@ -308,6 +309,16 @@ a:focus::after, a:active::after {
     opacity: 1;
   }
 }
+@keyframes bottom {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
 @keyframes left {
   from {
     opacity: 0;
@@ -433,19 +444,41 @@ ul a {
   max-width: 40ch;
 }
 .characters dl dt {
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .characters dl dt a {
   transition: inherit;
   color: rgba(var(--gray-a), 0.35);
 }
 .characters dl dt h3 {
-  transition: inherit;
   font-size: var(--tys-m);
+  position: relative;
+  padding: 0.5rem;
+  transition: inherit;
+  z-index: 0;
+  width: max-content;
+}
+.characters dl dt h3:hover {
+  color: #727070;
+}
+.characters dl dt h3::after {
+  content: "";
+  background: #F2EBD1;
+  border-radius: 8px;
+  display: block;
+  filter: url(#squiggle);
+  height: 1.25rem;
+  opacity: 0;
+  position: absolute;
+  transition: inherit;
+  transform: skewX(-10deg) translate(-5px, 15px) rotate(2deg);
+  top: 0;
+  width: 120%;
+  z-index: -1;
 }
 .characters dl .active {
   display: block;
-  transition: all 1s ease-in-out;
+  transition: all 0.75s ease-in-out;
 }
 .characters dl .active a {
   transition: inherit;
@@ -455,6 +488,13 @@ ul a {
   transition: inherit;
   font-size: var(--tys-l);
   font-weight: 700;
+}
+.characters dl .active h3::after {
+  content: "";
+  display: block;
+  opacity: 1;
+  transition: inherit;
+  z-index: -1;
 }
 .characters dl .active + dd {
   transition: all 1s ease-in-out;
