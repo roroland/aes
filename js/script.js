@@ -57,7 +57,6 @@ charsArr.forEach(function (item, i) {
       } 
       else {
         entry.target.style.animation = 'none';
-        console.log(entry.target + 'OUT NEW');
         return;
       }
       

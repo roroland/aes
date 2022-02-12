@@ -40,10 +40,14 @@ header{
   min-height: rel(160px);
   h1{
     line-height: 1;
-    margin-top: $component-space * 2;
+    margin-top: $component-space-small;
+    @media only screen and (min-width:48em){
+      margin-top: $component-space * 2;
+    }
   }
   h4{
     color: $pale;
+    padding-bottom: $component-space;
   }
   > *{
     position: relative;
@@ -64,8 +68,11 @@ article{
   p img{
     float: right;
     border-radius: 50%;
-    max-width: 15vw;
+    max-width: 35vw;
     margin: $component-space-small;
+    @media only screen and (min-width:48em){
+      max-width: 15vw;
+    }
   }
   p{
     margin-bottom: $component-space-small;
@@ -132,28 +139,43 @@ main{
     grid-template-rows: min-content 1fr min-content;
   }
 }
+
 footer{
   background-color: $lightest;
   padding-top: $component-space * 2;
   > div {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 45% 1fr;
+    gap: $component-space-small;
+    @media only screen and (max-width:48em){
+      img{
+        max-width: 100px;
+      }
+    }
     h3{
+      color: rgba(#{var(--darkgray-a)}, .75);
       margin-bottom: $component-space;
+      @media only screen and (max-width:48em){
+        font-size: var(--tys-m);
+      }
     }
     ul{
       display: inline-block;
       li{
         margin-bottom: $component-space;
+        font-size: var(--tys-s);
+        flex: 1;
+        word-break: break-all;
       }
     }
     a{
       align-items: flex-end;
+      word-wrap: break-word;
       color: $accent;
     }
     .privacy{
       grid-column: 1/-1;
-      font-size: rel(10px);
+      font-size: rel(12px);
       text-align: center;
       padding: $component-space-small;
       margin-top: $component-space;

@@ -11,9 +11,12 @@
   background: radial-gradient(51.62% 150.17% at 48.38% 43.68%, #D6B765 0%, #D6B765 90%, rgba(214, 187, 101, 0.63) 100%);
   > section{
     display: grid;
-    grid-row: 2;
     grid-column: cont-start / cont-end;
+    grid-row: 1/-1;
     grid-template-columns: minmax(clamp(0em, 1vw, $component-space), 1fr)  [cont-start] minmax(clamp(0em, 1vw, $component-space), var(--maxContent)) [cont-end] minmax(clamp(0em, 1vw, $component-space), 1fr);
+    @media only screen and (min-width:48em){
+      grid-row: 2;
+    }
   }
   > div{
     grid-row: 2;
@@ -23,15 +26,20 @@
     color: currentColor;
   }
   .character-image{
-    grid-row: 1/-1;
+    grid-row: 1 / span 1;
     grid-column-end: -1;
     z-index: 10;
     gap: 0;
     margin-left: initial;
-    max-width: 45%;
+    max-width: 38%;
     transform: translateY(-5%);
     justify-self: flex-end;
     overflow:hidden;
+    @media only screen and (min-width:48em){
+      grid-row: 1/-1;
+    max-width: 45%;
+
+    }
     ul{
       height: 100%;
       transform: translateX(30%);
@@ -47,15 +55,25 @@
     }
   }
   .character-desc{
-    max-height: rel(280px);
     overflow: hidden;
+    max-height: rel(380px);
+
+    @media only screen and (min-width:48em){
+      max-height: rel(280px);
+    }
   }
   .characters--wrapper{
     display: grid;
     grid-column: 1/4;
     grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content;
     grid-auto-rows: min-content;
-    padding: calc(#{$component-space} * 2) 8rem 0 0;
+    padding: calc(#{$component-space} * 2) 2rem 2rem 0;
+    @media only screen and (min-width:48em){
+      grid-row-start: auto;
+      grid-template-rows: 1fr;
+      padding: calc(#{$component-space} * 2) 8rem 0 0;
+    }
   }
   dl{
     dd{

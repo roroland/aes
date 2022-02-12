@@ -4,10 +4,13 @@
 .about{
   background: rgba(var(--dark-a), .75);
   color: $pale;
-  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
   grid-column: 1/-1;
   display: grid;
   grid-template-columns: minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr)  [cont-start] minmax(clamp(0em, 1vw, $component-space), var(--maxContent)) [cont-end] minmax(clamp($component-space-tiny, 1vw, $component-space), 1fr);
+  @media only screen and (min-width:48em){
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  }
   >*{
     grid-column: cont-start / cont-end;
   }
@@ -15,7 +18,10 @@
     color: $lightest;
   }
   div{
+    padding: calc(#{$component-space} * 4) 0 $component-space;
+    @media only screen and (min-width:48em){
     padding: calc(#{$component-space} * 4) 0 calc(#{$component-space} * 5);
+  }
   }
   h3{
     margin-bottom: $component-space-small;
@@ -23,7 +29,7 @@
       max-width: 80%;
     }
   }
-
+  
   ul{
     display: flex;
     flex-flow: row wrap;
@@ -31,8 +37,11 @@
     &.team{
       margin-bottom: $component-space * 4;
       li{
-        flex: 0 1 19%;
+        flex: 0 1 40%;
         text-align: center;
+        @media only screen and (min-width:48em){
+          flex: 0 1 19%;
+        }
       }
       p{
         font-size: var(--tys-s);
@@ -41,7 +50,13 @@
     }
     &.awards{
       margin: $component-space 0 $component-space * 4;
+      @media only screen and (max-width:48em){
+        li{
+          flex: 1 100%;
+          margin-bottom: $component-space;
+        }
+      }
     }
   }
-
+  
 }
