@@ -366,9 +366,23 @@ a:focus::after, a:active::after {
     transform: translateX(0%);
   }
 }
+.menu {
+  display: none;
+}
+@media only screen and (max-width: 48em) {
+  .menu {
+    display: flex;
+  }
+}
+
 nav {
-  display: flex;
   padding: 0.5rem 0;
+  display: flex;
+}
+@media only screen and (max-width: 48em) {
+  nav {
+    display: none;
+  }
 }
 
 h1 {
@@ -639,6 +653,9 @@ ul a {
 }
 .about ul.awards {
   margin: 1.5rem 0 6rem;
+}
+.about ul.awards a:hover {
+  color: #727070;
 }
 @media only screen and (max-width: 48em) {
   .about ul.awards li {

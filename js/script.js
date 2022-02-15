@@ -1,9 +1,17 @@
 const animatable = document.querySelectorAll('.anim');
+// characters
 const characters = document.querySelector('.characters--wrapper');
 let characterImage = document.querySelector('.character-image img');
 let characterItems = characters.querySelectorAll('dt');
 let charsArr = Array.from(characterItems);
 let activeCharacter = characters.querySelector('.active');
+// email
+const email = document.querySelector('.address');
+let efirst = 'cactus.production.info';
+let elast = 'gmail.com';
+
+email.href = `mailto:${efirst}@${elast}`;
+email.innerHTML = 'cactus.production.info@gmail.com';
 
 charsArr.forEach(function (item, i) {
   item.addEventListener('click', function (e) {
@@ -65,3 +73,4 @@ charsArr.forEach(function (item, i) {
   animatable.forEach(itm => {
     uiAnim.observe(itm);
   });
+
