@@ -1,4 +1,6 @@
 const animatable = document.querySelectorAll('.anim');
+const menu = document.querySelector('.menu');
+const nav = document.querySelector('.nav');
 // characters
 const characters = document.querySelector('.characters--wrapper');
 let characterImage = document.querySelector('.character-image img');
@@ -13,6 +15,7 @@ let elast = 'gmail.com';
 email.href = `mailto:${efirst}@${elast}`;
 email.innerHTML = 'cactus.production.info@gmail.com';
 
+// Animations
 charsArr.forEach(function (item, i) {
   item.addEventListener('click', function (e) {
     e.preventDefault();
@@ -74,3 +77,8 @@ charsArr.forEach(function (item, i) {
     uiAnim.observe(itm);
   });
 
+// Menu mobile
+menu.addEventListener('click', function () {
+  nav.style = '';
+  nav.classList.toggle('is-active');
+})

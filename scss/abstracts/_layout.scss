@@ -41,7 +41,7 @@ header{
   h1{
     line-height: 1;
     margin-top: $component-space-small;
-    @media only screen and (min-width:48em){
+    @media only screen and (min-width:62em){
       margin-top: $component-space * 2;
     }
   }

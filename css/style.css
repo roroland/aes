@@ -110,7 +110,7 @@ header h1 {
   line-height: 1;
   margin-top: 1rem;
 }
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 62em) {
   header h1 {
     margin-top: 3rem;
   }
@@ -369,9 +369,13 @@ a:focus::after, a:active::after {
 .menu {
   display: none;
 }
-@media only screen and (max-width: 48em) {
+@media only screen and (max-width: 47.99em) {
   .menu {
-    display: flex;
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+    z-index: 10;
   }
 }
 
@@ -379,10 +383,29 @@ nav {
   padding: 0.5rem 0;
   display: flex;
 }
-@media only screen and (max-width: 48em) {
+@media only screen and (max-width: 47.99em) {
   nav {
+    animation: none;
+    opacity: 0;
+    height: 0rem;
+    max-height: 0rem;
+    align-items: baseline;
+    width: 0;
+    transition: all 0.5s ease-out;
+  }
+  nav ul {
     display: none;
   }
+}
+nav.is-active {
+  max-height: 12.5rem;
+  height: 5rem;
+  width: auto;
+  transition: all 0.5s ease-out;
+  animation: fadeIn 1s ease-out forwards;
+}
+nav.is-active ul {
+  display: flex;
 }
 
 h1 {
@@ -617,7 +640,7 @@ ul a {
   color: #ffffff;
 }
 .about div {
-  padding: calc(1.5rem * 4) 0 1.5rem;
+  padding: calc(1.5rem * 2) 0 1.5rem;
 }
 @media only screen and (min-width: 48em) {
   .about div {

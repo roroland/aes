@@ -1,16 +1,40 @@
 @use '../abstracts/colors' as *;
+@use '../abstracts/functions' as *;
 @use '../abstracts/variables' as *;
 .menu{
   display: none;
-  @media only screen and (max-width: 48em) {
-    display: flex;
+  @media only screen and (max-width: 47.99em) {
+    display: block;
+    position: absolute;
+    right: $component-space-small;
+    top: 2rem;
+    z-index: 10;
   }
 }
 nav{
   padding: $component-space-tiny 0;
   display: flex;
-  @media only screen and (max-width: 48em) {
-    display: none;
+  @media only screen and (max-width: 47.99em) {
+    animation: none;
+    opacity: 0;
+    height: 0rem;
+    max-height: 0rem;
+    align-items: baseline;
+    width: 0;
+    transition: all .5s ease-out;
+    ul {
+      display: none;
+    }
+  }
+  &.is-active{
+    max-height: rel(200px);
+    height: rel(80px);
+    width: auto;
+    transition: all .5s ease-out;
+    animation: fadeIn 1s ease-out forwards;
+    ul{
+      display: flex;
+    }
   }
 }
 h1{

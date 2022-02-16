@@ -18,7 +18,7 @@
     color: $lightest;
   }
   div{
-    padding: calc(#{$component-space} * 4) 0 $component-space;
+    padding: calc(#{$component-space} * 2) 0 $component-space;
     @media only screen and (min-width:48em){
     padding: calc(#{$component-space} * 4) 0 calc(#{$component-space} * 5);
   }
