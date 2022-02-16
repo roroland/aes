@@ -373,7 +373,7 @@ a:focus::after, a:active::after {
   .menu {
     display: block;
     position: absolute;
-    right: 1rem;
+    right: 0;
     top: 2rem;
     z-index: 10;
   }
