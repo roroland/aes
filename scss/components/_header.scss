@@ -1,2 +1,27 @@
-@use '../abstracts/animations';
+@use '../abstracts/colors' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
 
+header{
+  grid-template-rows: 1fr;
+  grid-row-start: 1; 
+  background: $darker;
+  color: $lightest;
+  min-height: rel(160px);
+  h1{
+    line-height: 1;
+    margin-top: $component-space-small;
+    @media only screen and (min-width:62em){
+      margin-top: $component-space * 2;
+    }
+  }
+  h4{
+    color: $pale;
+    padding-bottom: $component-space;
+  }
+  > *{
+    position: relative;
+    grid-row: 1/-1;
+    z-index: 1;
+  }
+}
