@@ -83,7 +83,7 @@ main{
   }
 }
 
-footer{
+.footer{
   background-color: $lightest;
   padding-top: $component-space * 2;
   > div {
@@ -109,6 +109,9 @@ footer{
         font-size: var(--tys-s);
         flex: 1;
         word-break: break-all;
+        a{
+          color: $accent;
+        }
       }
     }
     a{

@@ -17,6 +17,15 @@ ul {
   list-style: none;
 }
 
+ul.generic {
+  margin-bottom: 1rem;
+}
+ul.generic li {
+  list-style: circle;
+  list-style-position: inside;
+  padding-bottom: 0.5em;
+}
+
 strong {
   font-weight: 700;
 }
@@ -150,44 +159,47 @@ main > div {
   grid-template-rows: min-content 1fr min-content;
 }
 
-footer {
+.footer {
   background-color: #ffffff;
   padding-top: 3rem;
 }
-footer > div {
+.footer > div {
   display: grid;
   grid-template-columns: 45% 1fr;
   gap: 1rem;
 }
 @media only screen and (max-width: 48em) {
-  footer > div img {
+  .footer > div img {
     max-width: 100px;
   }
 }
-footer > div h3 {
+.footer > div h3 {
   color: rgba(var(--darkgray-a), 0.75);
   margin-bottom: 1.5rem;
 }
 @media only screen and (max-width: 48em) {
-  footer > div h3 {
+  .footer > div h3 {
     font-size: var(--tys-m);
   }
 }
-footer > div ul {
+.footer > div ul {
   display: inline-block;
 }
-footer > div ul li {
+.footer > div ul li {
   margin-bottom: 1.5rem;
   font-size: var(--tys-s);
   flex: 1;
   word-break: break-all;
 }
-footer > div a {
+.footer > div ul li a {
+  color: #80c46a;
+}
+.footer > div a {
   align-items: flex-end;
   word-wrap: break-word;
   color: #80c46a;
 }
-footer > div .privacy {
+.footer > div .privacy {
   grid-column: 1/-1;
   font-size: 0.75rem;
   text-align: center;
@@ -412,28 +424,28 @@ h1 {
   text-transform: uppercase;
 }
 
-ul {
+ul:not(.generic) {
   display: flex;
   flex-flow: row wrap;
   gap: 0.5rem;
 }
 @media only screen and (min-width: 48em) {
-  ul {
+  ul:not(.generic) {
     gap: 1.5rem;
     margin-left: auto;
   }
 }
-ul li {
+ul:not(.generic) li {
   flex: 0 1 30%;
   font-size: var(--tys-xs);
 }
 @media only screen and (min-width: 48em) {
-  ul li {
+  ul:not(.generic) li {
     font-size: var(--tys-s);
     flex: 1 max-content;
   }
 }
-ul a {
+ul:not(.generic) a {
   color: #F2EBD1;
 }
 

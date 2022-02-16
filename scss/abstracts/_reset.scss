@@ -15,7 +15,14 @@ ul{
   list-style-position: inside;
   list-style: none;
 }
-
+ul.generic{
+  margin-bottom: 1rem;
+  li{
+    list-style: circle;
+    list-style-position: inside;
+    padding-bottom: .5em;
+  }
+}
 strong{
   font-weight: 700;
 }
