@@ -391,8 +391,8 @@ header > * {
 .cover {
   background: #252525;
   display: grid;
-  grid-template-rows: [header-start] auto [header-end cover-start] 18.75rem [bottom-start] -webkit-min-content [bottom-end cover-end];
-  grid-template-rows: [header-start] auto [header-end cover-start] 18.75rem [bottom-start] min-content [bottom-end cover-end];
+  grid-template-rows: [header-start] auto [header-end cover-start] 65vh [bottom-start] -webkit-min-content [bottom-end cover-end];
+  grid-template-rows: [header-start] auto [header-end cover-start] 65vh [bottom-start] min-content [bottom-end cover-end];
   overflow: hidden;
 }
 

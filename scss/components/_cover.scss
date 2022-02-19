@@ -5,7 +5,7 @@
 .cover{
   background: $darkergray;
   display: grid;
-  grid-template-rows: [header-start] auto [header-end cover-start] 20vh [bottom-start] min-content [bottom-end cover-end];
+  grid-template-rows: [header-start] auto [header-end cover-start] 65vh [bottom-start] min-content [bottom-end cover-end];
   overflow: hidden;
 }
 .header-cover{
