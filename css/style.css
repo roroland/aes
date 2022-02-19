@@ -92,6 +92,7 @@ body {
   background-color: #F9F6EF;
   display: grid;
   display: grid;
+  grid-template-rows: auto -webkit-min-content -webkit-min-content;
   grid-template-rows: auto min-content min-content;
   min-height: 100vh;
 }
@@ -156,6 +157,7 @@ main {
 main > div {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: min-content 1fr min-content;
 }
 
@@ -263,11 +265,30 @@ a:focus::after, a:active::after {
   opacity: 0;
 }
 
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
   to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
     opacity: 1;
   }
 }
@@ -281,6 +302,16 @@ a:focus::after, a:active::after {
     opacity: 1;
   }
 }
+@-webkit-keyframes bottom {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
 @keyframes bottom {
   from {
     opacity: 0;
@@ -291,10 +322,30 @@ a:focus::after, a:active::after {
     transform: translateY(0%);
   }
 }
+@-webkit-keyframes left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
 @keyframes left {
   from {
     opacity: 0;
     transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@-webkit-keyframes right {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
   }
   to {
     opacity: 1;
@@ -340,6 +391,7 @@ header > * {
 .cover {
   background: #252525;
   display: grid;
+  grid-template-rows: [header-start] auto [header-end cover-start] 18.75rem [bottom-start] -webkit-min-content [bottom-end cover-end];
   grid-template-rows: [header-start] auto [header-end cover-start] 18.75rem [bottom-start] min-content [bottom-end cover-end];
   overflow: hidden;
 }
@@ -354,10 +406,12 @@ header > * {
   grid-column: 1/-1;
   grid-row: 1/span 1;
   mix-blend-mode: multiply;
-  object-position: 50% 80%;
+  -o-object-position: 50% 80%;
+     object-position: 50% 80%;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   max-height: 11.25rem;
   z-index: 0;
 }
@@ -397,7 +451,8 @@ nav {
 }
 @media only screen and (max-width: 47.99em) {
   nav {
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
     opacity: 0;
     height: 0rem;
     max-height: 0rem;
@@ -414,7 +469,8 @@ nav.is-active {
   height: 5rem;
   width: auto;
   transition: all 0.5s ease-out;
-  animation: fadeIn 1s ease-out forwards;
+  -webkit-animation: fadeIn 1s ease-out forwards;
+          animation: fadeIn 1s ease-out forwards;
 }
 nav.is-active ul {
   display: flex;
@@ -425,12 +481,12 @@ h1 {
 }
 
 ul:not(.generic) {
-  display: flex;
   flex-flow: row wrap;
   gap: 0.5rem;
 }
 @media only screen and (min-width: 48em) {
   ul:not(.generic) {
+    display: flex;
     gap: 1.5rem;
     margin-left: auto;
   }
@@ -453,6 +509,7 @@ ul:not(.generic) a {
   color: #ffffff;
   display: grid;
   grid-template-columns: minmax(clamp(0.5rem, 1vw, 1.5rem), 1fr) [cont-start] minmax(clamp(0em, 1vw, 1.5rem), var(--maxContent)) [cont-end] minmax(clamp(0.5rem, 1vw, 1.5rem), 1fr);
+  grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: min-content 1fr min-content;
   grid-column: 1/-1;
   background: radial-gradient(51.62% 150.17% at 48.38% 43.68%, #D6B765 0%, #D6B765 90%, rgba(214, 187, 101, 0.63) 100%);
@@ -502,8 +559,10 @@ ul:not(.generic) a {
 .characters .character-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: left;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left;
+     object-position: left;
 }
 .characters .character-desc {
   overflow: hidden;
@@ -518,7 +577,9 @@ ul:not(.generic) a {
   display: grid;
   grid-column: 1/4;
   grid-template-columns: 1fr;
+  grid-template-rows: -webkit-min-content -webkit-min-content;
   grid-template-rows: min-content min-content;
+  grid-auto-rows: -webkit-min-content;
   grid-auto-rows: min-content;
   padding: calc(1.5rem * 2) 2rem 2rem 0;
 }
@@ -556,6 +617,8 @@ ul:not(.generic) a {
   padding: 0.5rem;
   transition: inherit;
   z-index: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
 }
 .characters dl dt h3:hover {
@@ -619,30 +682,32 @@ ul:not(.generic) a {
   gap: 1.5rem;
   padding-left: 1rem;
 }
-.features li {
+.features ul li {
   flex: 1 100%;
   list-style-type: circle;
 }
-.features li p {
+.features ul li p {
   padding-right: 0.5rem;
 }
 @media only screen and (min-width: 48em) {
-  .features li {
-    flex: 1 33%;
+  .features ul li {
+    flex: 0 1 calc(50% - 1rem);
   }
 }
 
 .about {
   background: rgba(var(--dark-a), 0.75);
   color: #F2EBD1;
-  clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
+  -webkit-clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
+          clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
   grid-column: 1/-1;
   display: grid;
   grid-template-columns: minmax(clamp(0.5rem, 1vw, 1.5rem), 1fr) [cont-start] minmax(clamp(0em, 1vw, 1.5rem), var(--maxContent)) [cont-end] minmax(clamp(0.5rem, 1vw, 1.5rem), 1fr);
 }
 @media only screen and (min-width: 48em) {
   .about {
-    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+    -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+            clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
   }
 }
 .about > * {
@@ -698,5 +763,4 @@ ul:not(.generic) a {
     margin-bottom: 1.5rem;
   }
 }
-
 /*# sourceMappingURL=style.css.map */

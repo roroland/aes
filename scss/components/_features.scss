@@ -10,15 +10,16 @@
     flex-flow: row wrap;
     gap: $component-space;
     padding-left: $component-space-small;
-  }
-  li{
-    flex: 1 100%;
-    list-style-type: circle;
-    p{
-      padding-right: $component-space-tiny;
+    li{
+      flex: 1 100%;
+      list-style-type: circle;
+      p{
+        padding-right: $component-space-tiny;
+      }
+      @media only screen and (min-width: 48em) {
+        flex: 0 1 calc(50% - $component-space-small);
+      }
     }
-    @media only screen and (min-width: 48em) {
-      flex: 1 33%;
-    }
   }
+
 }

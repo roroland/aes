@@ -41,10 +41,10 @@ h1{
   text-transform: uppercase;
 }
 ul:not(.generic){
-  display: flex;
   flex-flow: row wrap;
   gap: $component-space-tiny;
   @media only screen and (min-width: 48em){
+  display: flex;
     gap: $component-space;
     margin-left: auto;
   }
