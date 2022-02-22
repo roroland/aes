@@ -8,6 +8,7 @@
   grid-template-rows: [header-start] auto [header-end cover-start] 65vh [bottom-start] min-content [bottom-end cover-end];
   overflow: hidden;
 }
+
 .header-cover{
   grid-column: 1/-1;
   grid-row-start: cover-start; 
