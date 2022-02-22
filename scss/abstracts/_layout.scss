@@ -44,14 +44,17 @@ article{
     margin-bottom: $component-space;
   }
   p img{
-    float: right;
-    border-radius: 50%;
-    max-width: 35vw;
-    margin: $component-space-small;
+    border-radius: 8px;
+    max-width: 100%;
+    margin: $component-space-small 0;
     @media only screen and (min-width:48em){
-      max-width: 15vw;
+      float: left;
+      clear: right;
+      margin: 0 $component-space 0 0;
+      max-width: 38vw;
     }
   }
+
   p{
     margin-bottom: $component-space-small;
   }

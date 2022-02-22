@@ -7,7 +7,7 @@
     "watch:sass": "sass --watch scss/style.scss:css/style.css",
     "devserver": "live-server",
     "compile:sass": "sass scss/style.scss:css/style.comp.css",
-    "compress:css": "sass css/style.comp.css:css/style.css --style=compressed",
+    "compress:css": "sass css/style.comp.css:css/style.min.css --style=compressed",
     "start": "npm-run-all --parallel devserver watch:sass",
     "build": "npm-run-all compile:sass compress:css"
   },
