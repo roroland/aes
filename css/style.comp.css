@@ -160,6 +160,17 @@ main > div {
   grid-template-columns: 1fr;
   grid-template-rows: min-content 1fr min-content;
 }
+main .steam {
+  justify-self: center;
+  margin-bottom: calc(1.5rem * 2);
+  max-width: 150px;
+  mix-blend-mode: exclusion;
+  opacity: 0.85;
+  transition: opacity 0.3s ease-out;
+}
+main .steam:hover {
+  opacity: 0.5;
+}
 
 .footer {
   background-color: #ffffff;

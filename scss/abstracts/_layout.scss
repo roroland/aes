@@ -84,6 +84,17 @@ main{
     grid-template-columns: 1fr;
     grid-template-rows: min-content 1fr min-content;
   }
+  .steam{
+    justify-self: center;
+    margin-bottom: calc(#{$component-space} * 2);
+    max-width: 150px;
+    mix-blend-mode: exclusion;
+    opacity: .85;
+    transition: opacity .3s ease-out;
+    &:hover{
+      opacity: .5;
+    }
+  }
 }
 
 .footer{
