@@ -50,6 +50,10 @@
     }
     &.awards{
       margin: $component-space 0 $component-space * 4;
+      li{
+        flex: 1 100%;
+        list-style: circle;
+      }
       a:hover{
         color: $darkgray;
       }

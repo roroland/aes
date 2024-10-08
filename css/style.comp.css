@@ -703,6 +703,10 @@ ul:not(.generic) a {
 .about ul.awards {
   margin: 1.5rem 0 6rem;
 }
+.about ul.awards li {
+  flex: 1 100%;
+  list-style: circle;
+}
 .about ul.awards a:hover {
   color: #727070;
 }
